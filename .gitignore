@@ -1,2 +1,5 @@
 data/
 runs/
+.history/
+src/__pycache__
+configs/__pycache__
