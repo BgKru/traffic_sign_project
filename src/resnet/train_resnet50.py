@@ -23,6 +23,25 @@ from configs.resnet50_config import ResNet50Config
 from src.data_loader import get_data_loaders
 from src.resnet.model_resnet50 import create_resnet50
 
+def convert_to_serializable(obj):
+    """
+    Рекурсивно преобразует объекты в JSON-сериализуемый формат
+    """
+    if isinstance(obj, (np.int64, np.int32, np.int16, np.int8)):
+        return int(obj)
+    elif isinstance(obj, (np.float64, np.float32, np.float16)):
+        return float(obj)
+    elif isinstance(obj, np.ndarray):
+        return obj.tolist()
+    elif isinstance(obj, torch.Tensor):
+        return obj.cpu().numpy().tolist()
+    elif isinstance(obj, dict):
+        return {key: convert_to_serializable(value) for key, value in obj.items()}
+    elif isinstance(obj, (list, tuple)):
+        return [convert_to_serializable(item) for item in obj]
+    else:
+        return obj
+
 class GPUTrainer:
     """GPU-оптимизированный тренер с поддержкой AMP"""
     

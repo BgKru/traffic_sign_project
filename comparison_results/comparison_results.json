@@ -1,0 +1,72 @@
+{
+    "ResNet-50": {
+        "accuracy": 0.9922406967537609,
+        "precision": 0.9926612412237297,
+        "recall": 0.9922406967537609,
+        "f1_score": 0.9921829106250513,
+        "error_rate": 0.7759303246239113,
+        "total_errors": 98,
+        "total_samples": 12630,
+        "avg_confidence": 0.9961840510368347,
+        "avg_inference_time_ms": 0.12047753737360371,
+        "fps": 8300.302461354071,
+        "total_params": 24579179,
+        "model_size_mb": 93.76212692260742
+    },
+    "EfficientNet-B0": {
+        "accuracy": 0.0498812351543943,
+        "precision": 0.0024881376205279815,
+        "recall": 0.0498812351543943,
+        "f1_score": 0.0047398458743994586,
+        "error_rate": 95.01187648456056,
+        "total_errors": 12000,
+        "total_samples": 12630,
+        "avg_confidence": 0.024470359086990356,
+        "avg_inference_time_ms": 0.10355264876043963,
+        "fps": 9656.92342948577,
+        "total_params": 4685479,
+        "model_size_mb": 17.87368392944336
+    },
+    "MobileNetV3-Large": {
+        "accuracy": 0.057007125890736345,
+        "precision": 0.003249812402322262,
+        "recall": 0.057007125890736345,
+        "f1_score": 0.006149083242146842,
+        "error_rate": 94.29928741092637,
+        "total_errors": 11910,
+        "total_samples": 12630,
+        "avg_confidence": 0.024163968861103058,
+        "avg_inference_time_ms": 0.08177447717550189,
+        "fps": 12228.754429744999,
+        "total_params": 4505947,
+        "model_size_mb": 17.188823699951172
+    },
+    "ViT-B/16": {
+        "accuracy": 0.9759303246239113,
+        "precision": 0.9752743026757329,
+        "recall": 0.9759303246239113,
+        "f1_score": 0.9742424854332651,
+        "error_rate": 2.4069675376088675,
+        "total_errors": 304,
+        "total_samples": 12630,
+        "avg_confidence": 0.9330810308456421,
+        "avg_inference_time_ms": 0.1252393560660225,
+        "fps": 7984.71048887244,
+        "total_params": 86336299,
+        "model_size_mb": 329.3468437194824
+    },
+    "DenseNet-121": {
+        "accuracy": 0.971021377672209,
+        "precision": 0.9698169542190623,
+        "recall": 0.971021377672209,
+        "f1_score": 0.968025680321589,
+        "error_rate": 2.8978622327790973,
+        "total_errors": 366,
+        "total_samples": 12630,
+        "avg_confidence": 0.9310396909713745,
+        "avg_inference_time_ms": 0.8765880854412382,
+        "fps": 1140.786666632186,
+        "total_params": 7622571,
+        "model_size_mb": 29.077800750732422
+    }
+}

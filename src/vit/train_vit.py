@@ -27,6 +27,25 @@ from src.vit.data_loader_vit import get_vit_data_loaders
 from src.vit.model_vit import create_vit_gpu
 from src.utils import GPUManager, GPUMemoryMonitor
 
+def convert_to_serializable(obj):
+    """
+    Рекурсивно преобразует объекты в JSON-сериализуемый формат
+    """
+    if isinstance(obj, (np.int64, np.int32, np.int16, np.int8)):
+        return int(obj)
+    elif isinstance(obj, (np.float64, np.float32, np.float16)):
+        return float(obj)
+    elif isinstance(obj, np.ndarray):
+        return obj.tolist()
+    elif isinstance(obj, torch.Tensor):
+        return obj.cpu().numpy().tolist()
+    elif isinstance(obj, dict):
+        return {key: convert_to_serializable(value) for key, value in obj.items()}
+    elif isinstance(obj, (list, tuple)):
+        return [convert_to_serializable(item) for item in obj]
+    else:
+        return obj
+
 class ViTTrainer:
     """
     Тренер для Vision Transformer с GPU оптимизациями
